@@ -23,6 +23,7 @@ class Product(models.Model):
 class Category(models.Model):
     category_name = models.CharField(max_length=15, verbose_name='Category Name')
     description = models.TextField(verbose_name='Description', **NULLABLE)
+    created_at = models.DateTimeField(verbose_name='Creation Date', **NULLABLE)
 
     def __str__(self):
         return f'Category Name: {self.product_name}'
