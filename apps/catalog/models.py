@@ -9,8 +9,8 @@ class Product(models.Model):
     preview = models.ImageField(upload_to='products/', verbose_name='Preview', **NULLABLE)
     category = models.ForeignKey('Category', on_delete=models.PROTECT, verbose_name='Category')
     unit_price = models.IntegerField(verbose_name='Unit Price')
-    creation_date = models.DateTimeField(verbose_name='Creation Date')
-    last_modified = models.DateTimeField(verbose_name='Last Modified')
+    creation_date = models.DateTimeField(auto_now_add=True, verbose_name='Creation Date')
+    last_modified = models.DateTimeField(auto_now=True, verbose_name='Last Modified')
 
     def __str__(self):
         return f'Product Name: {self.product_name}'
@@ -25,7 +25,7 @@ class Category(models.Model):
     description = models.TextField(verbose_name='Description', **NULLABLE)
 
     def __str__(self):
-        return f'Category Name: {self.product_name}'
+        return f'Category Name: {self.category_name}'
 
     class Meta:
         verbose_name = 'category'
