@@ -30,3 +30,16 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'category'
         verbose_name_plural = 'categories'
+
+class Contacts(models.Model):
+    first_name = models.CharField(max_length=100, verbose_name='First Name')
+    last_name = models.CharField(max_length=100, verbose_name='Last Name')
+    phone = models.CharField(max_length=100, verbose_name='Phone Number')
+    email = models.EmailField(max_length=254, verbose_name='E-mail')
+
+    def __str__(self):
+        return f'Contact: {self.first_name} {self.last_name} {self.phone} {self.email}'
+
+    class Meta:
+        verbose_name = 'contact'
+        verbose_name_plural = 'contacts'
