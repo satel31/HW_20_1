@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контактная информация</title>
+</head>
+<body>
+    <h1>Контактная информация:</h1>
+        <tbody>
+        {% for c in contact %}
+            <p>{{ c.first_name }} {{ c.last_name }}, {{ c.phone }}, {{ c.email }}</p>
+        {% endfor %}
+        </tbody>
+</body>
+</html>
